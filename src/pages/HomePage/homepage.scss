@@ -1,0 +1,19 @@
+.homepage {
+    background: var(--secondary-color);
+    height: 100%;
+    width: 100%;
+
+.homepage_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    height: 100vh;
+
+.home_btn {
+    margin: 2rem 0;
+}
+}
+}

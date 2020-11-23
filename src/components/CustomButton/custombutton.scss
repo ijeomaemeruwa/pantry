@@ -1,0 +1,26 @@
+.custom_btn {
+    padding: 15px 20px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline-color: var(--primary-color) !important;
+    background: #393c83;
+    color: var(--white-color);
+
+&.home_btn {
+    width: 250px;
+    font-weight: 600;
+    letter-spacing: 2px; 
+}
+
+&.searchRecipe {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px;
+    width: 350px;
+}
+}

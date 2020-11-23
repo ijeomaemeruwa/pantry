@@ -1,0 +1,30 @@
+.search_recipe {
+    background: var(--secondary-color);
+    height: 100%;
+    width: 100%; 
+    
+.search_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    padding: 5rem 0 3rem 0;
+
+.label {
+    font-size: 1.5rem;
+    padding: 0.6rem 0;
+}
+
+input {
+    width: 350px;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #d5d5d5;
+    outline-color: #d5d5d5 !important;
+
+}
+}
+}
+
