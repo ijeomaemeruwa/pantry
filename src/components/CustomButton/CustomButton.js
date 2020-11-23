@@ -1,7 +1,7 @@
 import React from 'react'
 import '../CustomButton/custombutton.scss'
 
-const CustomButton = ({children, handleSubmit, home_btn, searchRecipe, ...otherProps}) => {
+const CustomButton = ({children, home_btn, searchRecipe, ...otherProps}) => {
     return (
     <>
     <button 
@@ -11,7 +11,6 @@ const CustomButton = ({children, handleSubmit, home_btn, searchRecipe, ...otherP
      custom_btn
     `} 
      {...otherProps}
-     onSubmit={handleSubmit}
     >
      {children}    
     </button>       

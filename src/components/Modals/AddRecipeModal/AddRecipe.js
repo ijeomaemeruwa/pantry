@@ -46,7 +46,7 @@ const AddRecipe = (props) => {
     <Modal.Body className="text-center modal_body">
     <h4>Create New Recipe</h4>
 
-    <Form className="form">
+    <Form className="form" onSubmit={handleSubmit} >
     <Form.Group controlId="formBasicPassword">
     <Form.Label>Title</Form.Label>
     <CustomInput 
@@ -69,6 +69,7 @@ const AddRecipe = (props) => {
     required
     />
     </Form.Group>
+    {/* 
     <Form.Group controlId="formBasicPassword">
     <Form.Label>Ingredients</Form.Label>
     <CustomInput 
@@ -90,13 +91,13 @@ const AddRecipe = (props) => {
     />
     </Form.Group>
 
-    <p>Upload image</p>
+    <p>Upload image</p> */}
 
     </Form>
     </Modal.Body>
 
     <Modal.Footer>
-    <CustomButton onSubmit={handleSubmit} type="submit">
+    <CustomButton type="submit">
       Save
     </CustomButton>
     </Modal.Footer>

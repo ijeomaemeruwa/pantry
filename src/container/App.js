@@ -7,6 +7,7 @@ import HomePage from '../pages/HomePage/HomePage'
 import SearchRecipe from '../pages/SearchRecipe/SearchRecipe'
 import Pantry from '../pages/Pantry/Pantry'
 import SavedSearch from '../pages/SavedSearch/SavedSearch'
+import DisplayRecipe from '../pages/SearchRecipe/DisplaySearch'
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
     <Route exact path="/" component={LandingPage} />
     <Route exact path="/homepage" component={HomePage} />
     <Route exact path="/searchrecipe" component={SearchRecipe} />
+    <Route path="/displayrecipe/:id" component={DisplayRecipe} />
     <Route exact path="/pantry" component={Pantry} />
     <Route exact path="/savedsearch" component={SavedSearch} />
     </Switch>
