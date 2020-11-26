@@ -3,13 +3,13 @@ import CustomButton from '../../components/CustomButton/CustomButton'
 import './homepage.scss'
 
 import { Link } from 'react-router-dom'
-import Menu from '../../components/Menu/Menu'
+import Nav from '../../components/Nav/Nav'
 
 const HomePage = () => {
 
     return (
     <>
-    <Menu />
+    <Nav />
     <section className="homepage text-center">
     <div className="homepage_content">
     <h3>What would you like to do?</h3>

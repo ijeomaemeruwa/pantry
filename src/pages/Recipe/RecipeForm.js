@@ -1,11 +1,12 @@
 import React from 'react'
-import './searchrecipe.scss'
+import './recipe.scss'
 
 import CustomButton from '../../components/CustomButton/CustomButton'
 
-const Search = (props) => {
+const RecipeForm = (props) => {
     return (
     <>
+    <div className="search_recipe">
     <div className="text-center mx-auto search_content">
     <form onSubmit={props.fetchMeals}>
     <label htmlFor="name" className="label">
@@ -17,12 +18,12 @@ const Search = (props) => {
     type="text" 
     placeholder="enter keyword e.g brownie"
     />
-    <CustomButton searchRecipe >SEARCH</CustomButton> 
+    <CustomButton searchRecipe>SEARCH</CustomButton> 
     </form>    
     </div>
-      
+    </div> 
     </>
     )
 }
 
-export default Search
+export default RecipeForm

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Menu from '../../components/Menu/Menu'
 import ReactPlayer from 'react-player';
 
-class DisplayRecipe extends Component {
-    
+
+class RecipeDetails extends Component { 
     state = {
         details: []
     }
@@ -17,12 +17,12 @@ class DisplayRecipe extends Component {
     }
 
 
-render() {
-    const recipe = this.state.details;
+    render() {
+    const { details } = this.state
     const ingredients = [];
     for(let i = 1; i <= 20; i++) {
-       if(recipe[`strIngredient${i}`]) {
-       ingredients.push(`${recipe[`strIngredient${i}`]} - ${recipe[`strMeasure${i}`]}`);
+       if(details[`strIngredient${i}`]) {
+       ingredients.push(`${details[`strIngredient${i}`]} - ${details[`strMeasure${i}`]}`);
        } else {
         break;
     }
@@ -35,12 +35,12 @@ render() {
     <section>
     <div className="recipe_header row">
      <div className="col-md-6">
-     <img className="recipe_image img-fluid" src={recipe.strMealThumb} alt={recipe.strMeal}/>
+     <img className="recipe_image img-fluid" src={details.strMealThumb} alt={details.strMeal}/>
      </div>
      <div className="col-md-6">
-     <h5>{recipe.strMeal}</h5>
-     <h6>{recipe.strCategory}</h6>
-     <h6>{recipe.strArea}</h6>
+     <h5>{details.strMeal}</h5>
+     <h6>{details.strCategory}</h6>
+     <h6>{details.strArea}</h6>
      </div>
     </div>
 
@@ -54,21 +54,21 @@ render() {
     </ul>
     </div> 
 
-    <div className="instr text-center mt-4">
+    <div className="procedure text-center">
     <div>
-    <h4 className="ingr-title">Procedure</h4>
+    <h4 className="procedure_title">Procedure</h4>
     </div>
-    <p className="instr-text text-justify">
-        {recipe.strInstructions}
+    <p className="procedure_details">
+    {details.strInstructions}
     </p>
     </div>
     {
-        recipe.strYoutube ?
-        <div className="video_container mt-4">
+        details.strYoutube ?
+        <div className="video_container">
         <div className="text-center">
         <h4>Video Tutorial</h4>
         </div>
-        <ReactPlayer url={recipe.strYoutube} className="video" />
+        <ReactPlayer url={details.strYoutube} className="video" />
         </div>
         : ''
     }
@@ -79,4 +79,4 @@ render() {
 }
   
 
-export default DisplayRecipe;
+export default RecipeDetails;

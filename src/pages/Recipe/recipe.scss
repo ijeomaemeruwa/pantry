@@ -1,18 +1,16 @@
+//Search.js
 .search_recipe {
     background: var(--secondary-color);
     height: 100%;
-    width: 100%; 
-  
-} 
+    width: 100%;  
 
 .search_content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     height: 100%;
-    padding: 5rem 0 3rem 0;
+    padding: 5rem 0;
 
 .label {
     font-size: 1.2rem;
@@ -28,7 +26,9 @@ input {
 
 }
 }
+} 
 
+//DisplaySearch.js
 .search_result {
     display: flex;
     flex-flow: row wrap;
@@ -37,7 +37,6 @@ input {
 
 .recipe_card {
     margin: 1.5rem;
-
 
     h5 {
         font-size: 1rem;
@@ -48,6 +47,7 @@ input {
         background: var(--secondary-color);
         border-radius: 25px;
         padding: 5px;
+        font-weight: 600px;
     }
     
     .card_btn {
@@ -55,16 +55,15 @@ input {
         flex-direction: row;
         justify-content: space-between;
     
-    button {
-        background: transparent;
-        color: #6d6d6d;
-        font-size: 1.5rem;
-        border: none;
-        outline: none;
+    // button {
+    //     background: transparent;
+    //     color: #6d6d6d;
+    //     font-size: 1.5rem;
+    //     border: none;
+    //     outline: none;
     
     &:hover {
         color: #282c34;
-    }
     }
     }
 }

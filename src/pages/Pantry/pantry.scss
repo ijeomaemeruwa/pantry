@@ -19,6 +19,14 @@
 }
 
 .card_container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1rem;
+    margin: 1rem;
+
+.card {
+    margin: 1.5rem;
+}
 
 h5 {
     font-size: 1rem;

@@ -1,12 +1,11 @@
 import React from 'react'
-import './searchrecipe.scss'
+import './recipe.scss'
 
 import Card from 'react-bootstrap/card'
-import { VscHeart } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
 
 
-const DisplaySearch = (props) => {
+const RecipeList = (props) => {
     return (
     <>
     <div className="search_result mx-auto text-center">
@@ -25,7 +24,9 @@ const DisplaySearch = (props) => {
         <small>{recipe.strCategory}</small>
         </Card.Text>
         <div className="card_btn">
-        <button><VscHeart /></button>
+        {/* <div onClick={() => props.handleSave(recipe)} className="save_icon">
+          <SavedRecipe />
+        </div> */}
         </div>
         </Card.Body>
         </Card>
@@ -35,4 +36,4 @@ const DisplaySearch = (props) => {
     )
 }
 
-export default DisplaySearch
+export default RecipeList

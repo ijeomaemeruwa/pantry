@@ -1,12 +1,11 @@
 
 import React from 'react'
 import Logo from '../Logo/Logo'
-import '../Menu/menu.scss'
+import './nav.scss'
 
 import { Link } from 'react-router-dom'
-// import { TiThMenu } from 'react-icons/ti'
 
-const Menu = () => {
+const Nav = () => {
     return (
     <>
     <nav className="nav">
@@ -20,7 +19,7 @@ const Menu = () => {
     <Link to="/pantry" className="nav_link">Pantry</Link>
      </li>
      <li>
-    <Link to="/savedsearch" className="nav_link">Saved Search</Link>
+    <Link to="/favorites" className="nav_link">Favorites</Link>
      </li>
     </ul>
     
@@ -30,7 +29,7 @@ const Menu = () => {
     )
 }
 
-export default Menu
+export default Nav
 
 
 
