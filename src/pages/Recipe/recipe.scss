@@ -1,4 +1,4 @@
-//Search.js
+//RecipeForm.js
 .search_recipe {
     background: var(--secondary-color);
     height: 100%;
@@ -28,7 +28,7 @@ input {
 }
 } 
 
-//DisplaySearch.js
+//RecipeList.js
 .search_result {
     display: flex;
     flex-flow: row wrap;
@@ -55,12 +55,6 @@ input {
         flex-direction: row;
         justify-content: space-between;
     
-    // button {
-    //     background: transparent;
-    //     color: #6d6d6d;
-    //     font-size: 1.5rem;
-    //     border: none;
-    //     outline: none;
     
     &:hover {
         color: #282c34;
@@ -69,3 +63,54 @@ input {
 }
 }
 
+//RecipeDetails
+.details_section {
+
+h4 {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #ba5eff;
+}
+
+.details_header {
+    padding: 2rem;
+    width: 100%;
+
+img {
+    width: 500px;
+}
+
+.details_description {
+    padding: 1rem;
+
+h5 {
+    padding: 1rem 0;
+}
+}
+}
+
+.ingredients {
+    padding: 1rem;
+
+ul {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+li {
+    list-style: none;
+}
+}
+}
+
+.procedure_details, .video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+}

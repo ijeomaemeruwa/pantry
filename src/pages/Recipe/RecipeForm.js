@@ -12,11 +12,8 @@ const RecipeForm = (props) => {
     <label htmlFor="name" className="label">
     Search for recipes from thousands of curated recipes:
     </label><br />
-    <input 
-    className="search"
-    name="searchTerm"
-    type="text" 
-    placeholder="enter keyword e.g brownie"
+    <input className="search" type="text" 
+    name="searchTerm" placeholder="enter search e.g brownie"
     />
     <CustomButton searchRecipe>SEARCH</CustomButton> 
     </form>    

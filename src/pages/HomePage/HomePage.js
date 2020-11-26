@@ -18,7 +18,7 @@ const HomePage = () => {
     </CustomButton>
     
     <CustomButton home_btn>
-    <Link to="/searchrecipe" className="link">Search Recipe</Link>
+    <Link to="/recipe" className="link">Search Recipe</Link>
     </CustomButton>
 
     <CustomButton home_btn>
