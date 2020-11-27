@@ -8,8 +8,7 @@ const CustomButton = ({children, home_btn, searchRecipe, ...otherProps}) => {
      className={` 
      ${home_btn ? 'home_btn': ''}
      ${searchRecipe ? 'searchRecipe': ''}  
-     custom_btn
-    `} 
+     custom_btn `} 
      {...otherProps}
     >
      {children}    

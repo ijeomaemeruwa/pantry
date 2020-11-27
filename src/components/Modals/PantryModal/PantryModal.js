@@ -8,6 +8,8 @@ import Form from 'react-bootstrap/Form'
 import CustomButton from '../../CustomButton/CustomButton'
 import CustomInput from '../../CustomInput/CustomInput'
 import Logo from '../../Logo/Logo'
+import UploadImage from '../../UploadImage/UploadImage'
+
 
 const PantryModal = (props) => {
   const [recipe, setRecipe] = useState({
@@ -16,13 +18,13 @@ const PantryModal = (props) => {
     ingredients: '',
     procedure: ''
   });
-
+ 
 
   const handleChange = e => {
     const { name, value } = e.target;
     setRecipe({...recipe, [name]: value})
-    // setRecipe(e.target.value)
   };
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -34,6 +36,8 @@ const PantryModal = (props) => {
       procedure: ''
     })
   };
+
+
 
     return (
     <>
@@ -93,10 +97,10 @@ const PantryModal = (props) => {
     required
     />
     </Form.Group>
-
-    <p>Upload image</p>
-
-    <CustomButton type="submit">
+    
+    <UploadImage />
+    
+    <CustomButton type="submit" pantry_btn>
       Save
     </CustomButton>
     </Form>
