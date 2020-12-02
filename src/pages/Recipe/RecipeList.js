@@ -3,15 +3,20 @@ import './recipe.scss'
 
 import Card from 'react-bootstrap/card'
 import { Link } from 'react-router-dom'
+import { VscHeart } from 'react-icons/vsc'
 
 
-const RecipeList = (props) => {
+const RecipeList = ({ getRecipe }) => {
+
+  //Destructure the props required from FavoritesContext
+  //const { addRecipeToFavorites} = useContext(FavoritesContext); 
+
     return (
     <>
-    <section className="container padding">
+    <section className="container padding my-3">
     <div className="search_result mx-auto text-center">
      {
-       props.getRecipe.map(recipe => (
+       getRecipe.map(recipe => (
         <Card key={recipe.idMeal} className="recipe_card" style={{ width: '18rem', height: '100%' }}>
         <Link 
         to={{ pathname: `/recipedetails/${recipe.idMeal}`, 
@@ -26,6 +31,11 @@ const RecipeList = (props) => {
         <Card.Text>
         <small>{recipe.strCategory}</small>
         </Card.Text>
+
+        <div className="fav_icon">
+        <VscHeart/>
+        </div>
+
         </Card.Body>
         </Card>
        ))} 

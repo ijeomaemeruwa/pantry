@@ -3,11 +3,15 @@ import './recipe.scss'
 import Nav from '../../components/Nav/Nav'
 import ReactPlayer from 'react-player';
 
+import CustomButton from '../../components/CustomButton/CustomButton'
+import { Link } from 'react-router-dom'
 
-class RecipeDetails extends Component { 
+
+class RecipeDetails extends Component {
     state = {
         details: []
-    }
+    } 
+ 
 
     componentDidMount = async () => {
         const title = this.props.location.state.recipe;
@@ -16,20 +20,9 @@ class RecipeDetails extends Component {
         this.setState({ details: apiData.meals[0] })
     }
 
-    // componentDidMount = () => {
-    //     const json = localStorage.getItem("details");
-    //     const meals = JSON.parse(json);
-    //     this.setState({ details: meals });
-    // }
-
-    // componentDidUpdate = () => {
-    //     const meals = JSON.stringify(this.state.details);
-    //     localStorage.setItem("details", meals);
-    // }
-
 
     render() {
-    const { details } = this.state
+     const { details } = this.state;
     const ingredients = [];
     for(let i = 1; i <= 20; i++) {
        if(details[`strIngredient${i}`]) {
@@ -37,13 +30,18 @@ class RecipeDetails extends Component {
        } else {
         break;
     }
-    }  
-
-
+    }
+    
     return (
     <>
     <Nav />
     <section className="details_section">
+    <div className="home_btn">
+    <CustomButton>
+    <Link to="/recipe" className="list_btn">Go Back</Link>
+    </CustomButton>
+    </div>
+
     <h4>More Details for {details.strMeal}</h4>
     <div className="details_header row mx-auto text-center">
      <div className="col-md-6">

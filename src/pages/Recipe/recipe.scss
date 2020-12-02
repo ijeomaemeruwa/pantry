@@ -12,6 +12,13 @@
     height: 100%;
     padding: 5rem 0;
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
 .label {
     font-size: 1.2rem;
     padding: 0.6rem 0;
@@ -22,8 +29,10 @@ input {
     padding: 10px;
     border-radius: 50px;
     border: 1px solid #d5d5d5;
+    margin-bottom: 5px;
     outline-color: #d5d5d5 !important;
 
+}
 }
 }
 } 
@@ -60,11 +69,28 @@ input {
         color: #282c34;
     }
     }
+
+    .fav_icon {
+        font-size: 1.5rem;
+
+        &:hover {
+            color: #282c34;
+        }
+    }
 }
 }
 
 //RecipeDetails
 .details_section {
+
+.home_btn {
+    margin: 10px;
+
+.list_btn {
+    text-decoration: none;
+    color: #fff;
+}
+}
 
 h4 {
     text-align: center;
@@ -84,7 +110,7 @@ img {
     padding: 1rem;
 
 h5 {
-    padding: 1rem 0;
+    padding: 0.6rem 0;
 }
 }
 }

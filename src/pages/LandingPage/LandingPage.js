@@ -1,7 +1,7 @@
 import React from 'react'
-import '../LandingPage/landingpage.scss'
+import './landingpage.scss'
 import foodimage from '../../assets/images/foodimg1.png'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 import CustomButton from '../../components/CustomButton/CustomButton'
 import Logo from '../../components/Logo/Logo'
@@ -18,9 +18,9 @@ const LandingPage = () => {
     <div className="nav_items row">
     <Logo />
 
-    <CustomButton className="custom_btn">
+    {/* <CustomButton className="custom_btn">
     <Link to="/automate" className="link">AUTOMATE</Link>
-    </CustomButton>
+    </CustomButton> */}
     </div>
     </nav>
 

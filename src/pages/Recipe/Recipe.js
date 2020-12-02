@@ -18,8 +18,8 @@ const SearchRecipe = () => {
         const data = await res.json();
         setGetRecipe(data.meals)
   
-      } catch(e) {
-        console.log(e);
+      } catch(error) {
+        console.log(error);
       }
       }
 

@@ -1,65 +1,68 @@
 
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './pantry.scss'
-//import { db } from '../../firebase/config'
-// import CustomModal from '../../components/Modals/CustomModal/CustomModal'
+import { database } from '../../firebase/config'
+import pantryImg from '../../assets/images/pantry.png'
+
 
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import { AiOutlineDelete } from 'react-icons/ai'
 import { RiShareForwardLine } from 'react-icons/ri'
-import useDatabase from '../../customHook/useDatabase'
+
 
 const PantryList = () => {
-    //const [recipeCard, setRecipeCard] = useState([]);
-    const { docs } = useDatabase('pantry');
-
-    // useEffect(() => {
-    //     const unsubscribe = db.collection('pantry').onSnapshot(snapshot => {
-    //     const allRecipes = snapshot.docs.map(doc => ({
-    //       id: doc.id,
-    //       ...doc.data()
-    //     }));
-    //      setRecipeCard(allRecipes)
-    //     });
-    //     return () => {
-    //       console.log('cleanup');
-    //       unsubscribe();
-    //     };
-    //   }, []);
+    const [recipeDocs, setRecipeDocs] = useState([]);
+    
+    useEffect(() => {
+        const unsubscribe = database.collection('pantry')
+        .onSnapshot(snapshot => {
+        const allRecipesInPantry = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+         setRecipeDocs(allRecipesInPantry)
+        });
+        return () => {
+          unsubscribe();
+        };
+      },[]);
   
   
-      // const deleteRecipeCard = e => {
-      //   // db.collection('pantry')
-      //   // .doc(id)
-      //   // .delete();
+      const deleteRecipeCard = id => {
+        database.collection('pantry')
+        .doc(id)
+        .delete();
+      }
 
-      //   if(e.target.tagName === 'svg'){
-      //     const id = e.target.getAttribute('id');
-      //     db.collection('pantry').doc(id).delete();
-      // }
+      // const updateRecipe = (key, data) => {
+      //   return database.collection('pantry')
+      //   .doc(key)
+      //   .update(data);
       // };
+
       
       
     return (
     <>
       <div className="card_container container">
       {
-        docs && docs.map(recipe => (
+        recipeDocs.map(recipe => (
         <Card key={recipe.id} style={{ width: '16rem' }} className="card"> 
-    
-        <Card.Img variant="top" src={recipe.url} alt={recipe.title} />
+        <Link to={{ pathname: `/pantrydetails/${recipe.id}`, state: { recipe: recipe.title } }}>
+        <Card.Img variant="top" className="pantry_img" src={pantryImg} alt={recipe.title} />
+        </Link>
          <Card.Body>
          <Card.Title><h5>{recipe.title}</h5></Card.Title>
          <Card.Text>
           <small>{recipe.category}</small>
          </Card.Text>
-
-         <Link to={{ pathname: `/pantrydetails/${recipe.id}`, state: { recipe: recipe.title } }}>View</Link>
-
          <div className="card_btn">
-         <button><AiOutlineDelete /></button>
-         <button><RiShareForwardLine /></button>
+        <button 
+        onClick={() => deleteRecipeCard(recipe.id)}>
+        <AiOutlineDelete />
+        </button>
+        <button><RiShareForwardLine /></button>
          </div>
         </Card.Body>
         </Card>
@@ -68,6 +71,7 @@ const PantryList = () => {
     </div>       
     </>
     )
-}
+
+    }
 
 export default PantryList

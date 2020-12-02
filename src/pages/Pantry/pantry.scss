@@ -26,6 +26,20 @@
 
 .card {
     margin: 1.5rem;
+    border-radius: 10px;
+
+    &:hover {
+    box-shadow: 0 0 10px rgba(169, 169, 169, 0.1);
+    }
+
+    .pantry_img {
+        padding: 1rem;
+        width: 200px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 h5 {

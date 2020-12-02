@@ -10,11 +10,11 @@
 .landingpage {
     background: var(--secondary-color);
     height: 100%;
-    width: 100%;
+    width: 100% !important;
 
 .content {
     padding: 3rem;
-    height: 100vh;
+    height: 100%;
 
 .image {
     width: 100%;
@@ -42,14 +42,17 @@ img {
 }
 
 @media screen and (max-width: 480px) {
+    .content {
+        padding: 2rem;
+    
     .image {
+        width: 100%;
     
     img {
         width: 100%;
-        width: 100%;
     }
-    }  
-    
+    }
+    }
     .intro {
 
         h1 {
