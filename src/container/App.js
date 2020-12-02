@@ -11,8 +11,7 @@ import PantryDetails from '../pages/Pantry/PantryDetails'
 import Favorites from '../pages/Favorites/Favorites'
 
 
-function App() {
-  
+const App = () => {
   return (
     <>
     <Router>
