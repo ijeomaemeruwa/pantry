@@ -1,14 +1,12 @@
 .custom_btn {
     padding: 15px 20px;
     width: 200px;
-    display: flex;
-    justify-content: center;
     border-radius: 50px;
     border: none;
     font-weight: bold;
     letter-spacing: 1px;
     outline-color: var(--primary-color) !important;
-    background: #393c83;
+    background: #0e1116;
     color: var(--white-color);
 
 &.home_btn {

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './pantrymodal.scss'
-import { db } from '../../../firebase/config'
+import { database } from '../../../firebase/config'
+//import useStorage from '../../customHook/useStorage'
 
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
@@ -8,7 +9,6 @@ import Form from 'react-bootstrap/Form'
 import CustomButton from '../../CustomButton/CustomButton'
 import CustomInput from '../../CustomInput/CustomInput'
 import Logo from '../../Logo/Logo'
-import UploadImage from '../../UploadImage/UploadImage'
 
 
 const PantryModal = (props) => {
@@ -28,7 +28,7 @@ const PantryModal = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    db.collection('pantry').add(recipe)
+    database.collection('pantry').add(recipe)
     setRecipe({
       title: '',
       category: '',
@@ -98,9 +98,7 @@ const PantryModal = (props) => {
     />
     </Form.Group>
     
-    <UploadImage />
-    
-    <CustomButton type="submit" pantry_btn>
+    <CustomButton type="submit">
       Save
     </CustomButton>
     </Form>
