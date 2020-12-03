@@ -13,6 +13,17 @@ import { RiShareForwardLine } from 'react-icons/ri'
 
 const PantryList = () => {
     const [recipeDocs, setRecipeDocs] = useState([]);
+
+    // useEffect(() => {
+    //   database.enablePersistence()
+    //   .catch(err => {
+    //     if(err.code === 'failed-precondition'){
+    //       console.log('Persistence failed') //error when multiple tabs are open at once
+    //     } else if(err.code === 'implemented'){
+    //       console.log('Persistence is not available')//error when browser is not supported
+    //     }
+    //   });
+    // }, []);
     
     useEffect(() => {
         const unsubscribe = database.collection('pantry')

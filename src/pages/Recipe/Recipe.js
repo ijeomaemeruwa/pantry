@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './recipe.scss'
 
 import Nav from '../../components/Nav/Nav'
@@ -7,8 +7,21 @@ import RecipeList from './RecipeList'
 
 
 const SearchRecipe = () => {
-    const [ getRecipe, setGetRecipe ] = useState([])
+    const [ getRecipe, setGetRecipe ] = useState([]);
 
+
+    useEffect(() => {
+      const storedRecipes = JSON.parse(localStorage.getItem('recipes'));
+      if (storedRecipes) setGetRecipe(storedRecipes);
+    }, []);
+
+
+    useEffect(() => {
+      const recipes = JSON.stringify(getRecipe);
+      localStorage.setItem('recipes', recipes)
+    }, [getRecipe]);
+
+     
 
     const fetchMeals = async(e) => {
       e.preventDefault()
