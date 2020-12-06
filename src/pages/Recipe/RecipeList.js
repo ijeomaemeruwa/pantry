@@ -1,19 +1,19 @@
-import React from 'react'
-import './recipe.scss'
+import React from 'react';
+import './recipe.scss';
 
-import Card from 'react-bootstrap/card'
-import { Link } from 'react-router-dom'
-import { VscHeart } from 'react-icons/vsc'
+import Card from 'react-bootstrap/card';
+import Fade from 'react-reveal/Fade';
+import { Link } from 'react-router-dom';
+import { VscHeart } from 'react-icons/vsc';
 
 
-const RecipeList = ({ getRecipe }) => {
-
-  //Destructure the props required from FavoritesContext
-  //const { addRecipeToFavorites} = useContext(FavoritesContext); 
+const RecipeList = ({ getRecipe }) => { 
 
     return (
     <>
-    <section className="container padding my-3">
+    <section className="container padding my-3 text-center">
+    <Fade>
+      <h3>Search Results..</h3>
     <div className="search_result mx-auto text-center">
      {
        getRecipe.map(recipe => (
@@ -38,8 +38,10 @@ const RecipeList = ({ getRecipe }) => {
 
         </Card.Body>
         </Card>
+        
        ))} 
-    </div> 
+    </div>
+    </Fade> 
     </section>   
     </>
     )

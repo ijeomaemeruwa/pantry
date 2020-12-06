@@ -1,14 +1,13 @@
-import React, {useState} from 'react'
-import './pantrymodal.scss'
-import { database } from '../../../firebase/config'
-//import useStorage from '../../customHook/useStorage'
+import React, {useState} from 'react';
+import './pantrymodal.scss';
+import { database } from '../../../firebase/config';
 
-import Modal from 'react-bootstrap/Modal'
-import Form from 'react-bootstrap/Form'
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
-import CustomButton from '../../CustomButton/CustomButton'
-import CustomInput from '../../CustomInput/CustomInput'
-import Logo from '../../Logo/Logo'
+import CustomButton from '../../CustomButton/CustomButton';
+import CustomInput from '../../CustomInput/CustomInput';
+import Logo from '../../Logo/Logo';
 
 
 const PantryModal = (props) => {
@@ -22,13 +21,13 @@ const PantryModal = (props) => {
 
   const handleChange = e => {
     const { name, value } = e.target;
-    setRecipe({...recipe, [name]: value})
+    setRecipe({...recipe, [name]: value});
   };
 
 
   const handleSubmit = e => {
     e.preventDefault();
-    database.collection('pantry').add(recipe)
+    database.collection('pantryList').add(recipe);
     setRecipe({
       title: '',
       category: '',
@@ -36,7 +35,6 @@ const PantryModal = (props) => {
       procedure: ''
     })
   };
-
 
 
     return (
@@ -71,7 +69,7 @@ const PantryModal = (props) => {
     type="text"
     name="category"
     value={recipe.category}
-    placeholder="recipe category e.g cocktail, bread"
+    placeholder="recipe category e.g cocktail, breakfast"
     onChange={handleChange}
     required
     />
@@ -98,7 +96,7 @@ const PantryModal = (props) => {
     />
     </Form.Group>
     
-    <CustomButton type="submit">
+    <CustomButton type="submit" onClick={props.onHide}>
       Save
     </CustomButton>
     </Form>
@@ -108,4 +106,4 @@ const PantryModal = (props) => {
     )
 }
 
-export default PantryModal
+export default PantryModal;

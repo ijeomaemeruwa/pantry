@@ -1,88 +1,68 @@
+import React, {useEffect, useState} from 'react';
+import './pantry.scss';
+import { database } from '../../firebase/config';
+import pantryImg from '../../assets/images/pantry.png';
 
-import React, {useEffect, useState} from 'react'
-import './pantry.scss'
-import { database } from '../../firebase/config'
-import pantryImg from '../../assets/images/pantry.png'
+import Card from 'react-bootstrap/Card';
+import { AiOutlineDelete } from 'react-icons/ai';
 
-
-import Card from 'react-bootstrap/Card'
-import { Link } from 'react-router-dom'
-import { AiOutlineDelete } from 'react-icons/ai'
-import { RiShareForwardLine } from 'react-icons/ri'
+// import { BiDish } from 'react-icons/bi'
 
 
 const PantryList = () => {
     const [recipeDocs, setRecipeDocs] = useState([]);
-
-    // useEffect(() => {
-    //   database.enablePersistence()
-    //   .catch(err => {
-    //     if(err.code === 'failed-precondition'){
-    //       console.log('Persistence failed') //error when multiple tabs are open at once
-    //     } else if(err.code === 'implemented'){
-    //       console.log('Persistence is not available')//error when browser is not supported
-    //     }
-    //   });
-    // }, []);
     
+
     useEffect(() => {
-        const unsubscribe = database.collection('pantry')
+        const unsubscribe = database.collection('pantryList')
         .onSnapshot(snapshot => {
-        const allRecipesInPantry = snapshot.docs.map(doc => ({
+        const pantry = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
         }));
-         setRecipeDocs(allRecipesInPantry)
+         setRecipeDocs(pantry)
         });
         return () => {
           unsubscribe();
         };
       },[]);
   
-  
+
+      //Delete Recipe function
       const deleteRecipeCard = id => {
-        database.collection('pantry')
+        database.collection('pantryList')
         .doc(id)
         .delete();
-      }
+      };
 
-      // const updateRecipe = (key, data) => {
-      //   return database.collection('pantry')
-      //   .doc(key)
-      //   .update(data);
-      // };
 
-      
-      
+  
     return (
     <>
       <div className="card_container container">
       {
         recipeDocs.map(recipe => (
         <Card key={recipe.id} style={{ width: '16rem' }} className="card"> 
-        <Link to={{ pathname: `/pantrydetails/${recipe.id}`, state: { recipe: recipe.title } }}>
-        <Card.Img variant="top" className="pantry_img" src={pantryImg} alt={recipe.title} />
-        </Link>
-         <Card.Body>
-         <Card.Title><h5>{recipe.title}</h5></Card.Title>
-         <Card.Text>
-          <small>{recipe.category}</small>
-         </Card.Text>
-         <div className="card_btn">
-        <button 
-        onClick={() => deleteRecipeCard(recipe.id)}>
-        <AiOutlineDelete />
-        </button>
-        <button><RiShareForwardLine /></button>
-         </div>
-        </Card.Body>
+           <Card.Img variant="top" className="pantry_img" src={pantryImg} alt={recipe.title} />
+           <Card.Body>
+           <Card.Title>
+             <h5>{recipe.title}</h5>
+           </Card.Title>
+           <Card.Text>
+            <small>{recipe.category}</small>
+           </Card.Text>
+
+           <div className="delete_btn" onClick={() => deleteRecipeCard(recipe.id)}>
+           <AiOutlineDelete />
+           </div>
+
+           </Card.Body>
         </Card>
         ))
       }
     </div>       
     </>
-    )
-
-    }
+    );
+    };
 
 export default PantryList

@@ -38,6 +38,11 @@ input {
 } 
 
 //RecipeList.js
+section {
+    h3 {
+        color: var(--primary-color);
+    }
+}
 .search_result {
     display: flex;
     flex-flow: row wrap;
@@ -45,7 +50,8 @@ input {
     margin: 1rem;
 
 .recipe_card {
-    margin: 1.5rem;
+    margin: 2rem;
+    border-radius: 20px;
 
     h5 {
         font-size: 1rem;
@@ -83,8 +89,20 @@ input {
 //RecipeDetails
 .details_section {
 
+.list_btn {
+    padding: 10px 15px;
+    width: 180px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline-color: var(--primary-color) !important;
+    background: #0e1116;
+    color: var(--white-color);
+}
+
 .home_btn {
-    margin: 10px;
+    margin: 20px;
 
 .list_btn {
     text-decoration: none;
@@ -138,5 +156,24 @@ li {
     align-items: center;
     margin: 0 auto;
     padding: 0 2rem;
+}
+}
+
+@media screen and (max-width: 480px) {
+    
+.details_section {
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1rem; 
+}
+ } 
+ 
+.video {
+    width: 100%;
 }
 }

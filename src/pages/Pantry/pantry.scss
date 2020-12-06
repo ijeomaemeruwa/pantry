@@ -12,10 +12,6 @@
     border-radius: 25px;
 }
 
-// h4 {
-//     padding: 1.5rem 0;
-//     font-size: 2rem;
-// }
 }
 
 .card_container {
@@ -26,7 +22,7 @@
 
 .card {
     margin: 1.5rem;
-    border-radius: 10px;
+    border-radius: 20px;
 
     &:hover {
     box-shadow: 0 0 10px rgba(169, 169, 169, 0.1);
@@ -53,21 +49,12 @@ small {
     padding: 5px;
 }
 
-.card_btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-button {
-    background: transparent;
+.delete_btn {
     color: #6d6d6d;
     font-size: 1.5rem;
-    border: none;
-    outline: none;
 
-&:hover {
-    color: #282c34;
-}
-}
+    &:hover {
+        color: #282c34;
+    }
 }
 }

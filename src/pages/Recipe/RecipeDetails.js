@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import './recipe.scss'
-import Nav from '../../components/Nav/Nav'
+import React, { Component } from 'react';
+import './recipe.scss';
+import Nav from '../../components/Nav/Nav';
 import ReactPlayer from 'react-player';
-
-import CustomButton from '../../components/CustomButton/CustomButton'
 import { Link } from 'react-router-dom'
 
 
@@ -37,9 +35,7 @@ class RecipeDetails extends Component {
     <Nav />
     <section className="details_section">
     <div className="home_btn">
-    <CustomButton>
     <Link to="/recipe" className="list_btn">Go Back</Link>
-    </CustomButton>
     </div>
 
     <h4>More Details for {details.strMeal}</h4>

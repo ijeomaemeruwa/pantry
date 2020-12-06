@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import './recipe.scss'
+import React, { useState, useEffect } from 'react';
+import './recipe.scss';
 
-import Nav from '../../components/Nav/Nav'
-import RecipeForm from './RecipeForm'
-import RecipeList from './RecipeList'
+import Nav from '../../components/Nav/Nav';
+import RecipeForm from './RecipeForm';
+import RecipeList from './RecipeList';
 
 
 const SearchRecipe = () => {
     const [ getRecipe, setGetRecipe ] = useState([]);
-
 
     useEffect(() => {
       const storedRecipes = JSON.parse(localStorage.getItem('recipes'));
@@ -29,7 +28,7 @@ const SearchRecipe = () => {
       try {
         const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
         const data = await res.json();
-        setGetRecipe(data.meals)
+        setGetRecipe(data.meals);
   
       } catch(error) {
         console.log(error);

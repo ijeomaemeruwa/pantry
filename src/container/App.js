@@ -7,7 +7,7 @@ import HomePage from '../pages/HomePage/HomePage'
 import RecipeDetails from '../pages/Recipe/RecipeDetails'
 import Recipe from '../pages/Recipe/Recipe'
 import Pantry from '../pages/Pantry/Pantry'
-import PantryDetails from '../pages/Pantry/PantryDetails'
+// import PantryDetails from '../pages/Pantry/PantryDetails'
 import Favorites from '../pages/Favorites/Favorites'
 
 
@@ -22,7 +22,7 @@ const App = () => {
     <Route exact path="/recipe" component={Recipe} />
     <Route path="/recipedetails/:id" component={RecipeDetails} />
     <Route exact path="/pantry" component={Pantry} />
-    <Route path="/pantrydetails/:id" component={PantryDetails} />
+    {/* <Route path="/pantrydetails/:id" component={PantryDetails} /> */}
     <Route exact path="/favorites" component={Favorites} />
     </Switch>
     </Router>

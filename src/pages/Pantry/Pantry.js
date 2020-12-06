@@ -4,6 +4,7 @@ import './pantry.scss'
 import PantryModal from '../../components/Modals/PantryModal/PantryModal'
 import Nav from '../../components/Nav/Nav'
 import PantryList from './PantryList'
+import Zoom from 'react-reveal/Zoom'
 
 const Pantry = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -18,7 +19,9 @@ const Pantry = () => {
     </button> 
     <PantryModal show={modalShow} onHide={() => setModalShow(false)} />
     </div> 
+    <Zoom>
     <PantryList />
+    </Zoom>
     </div> 
     </>
     )

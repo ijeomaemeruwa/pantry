@@ -16,14 +16,6 @@
     padding: 3rem;
     height: 100%;
 
-.image {
-    width: 100%;
-
-img {
-    width: 600px;
-}
-}
-
 .intro {
 
     h1 {
@@ -43,26 +35,19 @@ img {
 
 @media screen and (max-width: 480px) {
     .content {
-        padding: 2rem;
+        padding: 1rem;
     
-    .image {
-        width: 100%;
-    
-    img {
-        width: 100%;
-    }
-    }
     }
     .intro {
 
         h1 {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2rem !important;
+            font-weight: bold !important;
         }
         
         p {
-            padding: 1.2rem 0;
-            font-size: 1rem;
+            padding: 0.6rem 0;
+            font-size: 1rem !important;
             letter-spacing: 0;
         }
         }

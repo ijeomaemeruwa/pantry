@@ -1,14 +1,15 @@
-import React from 'react'
-import './landingpage.scss'
-import foodimage from '../../assets/images/foodimg1.png'
+import React from 'react';
+import './landingpage.scss';
+import foodimage from '../../assets/images/foodimg1.png';
 // import { Link } from 'react-router-dom'
 
-import CustomButton from '../../components/CustomButton/CustomButton'
-import Logo from '../../components/Logo/Logo'
-import UserAuthModal from '../../components/Modals/UserAuthModal/UserAuthModal'
+import CustomButton from '../../components/CustomButton/CustomButton';
+import Logo from '../../components/Logo/Logo';
+import UserAuthModal from '../../components/Modals/UserAuthModal/UserAuthModal';
+import Image from 'react-bootstrap/Image';
+import Fade from 'react-reveal/Fade';
 
 const LandingPage = () => {
-
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
@@ -25,14 +26,15 @@ const LandingPage = () => {
     </nav>
 
     <div className="content row mx-auto">
-    <div className="image col-md-6 my-5">
-     <img src={foodimage} alt="landing page" />
+    <div className="col-md-7 col-sm-10 my-3">
+     <Image src={foodimage} alt="landing page" fluid />
     </div>
 
-    <div className="intro col-md-6 my-5">
-        <h1>Save, Search, Share and Automate.</h1> 
-        <p>Have an idea of a recipe or cocktail mix in mind? Easily save them using pantry. Upload your images, recipe details and
-        share them with friends on social media.</p> 
+    <Fade>
+    <div className="intro col-md-5 col-sm-10 my-3">
+        <h1>Create, Search and Save.</h1> 
+        <p>Have an idea of a recipe or cocktail mix in mind? Easily save them using pantry. Upload recipe details and
+        save them for easy access.</p> 
 
         <CustomButton create  
         onClick={() => setModalShow(true)}
@@ -44,8 +46,8 @@ const LandingPage = () => {
         show={modalShow}
         onHide={() => setModalShow(false)}
         />
-
-    </div>   
+    </div> 
+    </Fade>  
     </div>   
     </section>       
     </>
