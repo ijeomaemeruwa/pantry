@@ -28,7 +28,7 @@ $ git clone https://github.com/ijeomaemeruwa/pantry.git
 
 * Move to project directory
 ```
-$ cd movie_app
+$ cd pantry
 ```
 
 * Install React Dependencies
