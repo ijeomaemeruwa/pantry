@@ -11,13 +11,14 @@ A recipe app that enables users create, search and save their favorite recipes.
 ---
 
 ### Pantry Landing page
-User can click on the "Create Pantry" button to movie to the home page.
+User can click on the "Create Pantry" button to move to the home page.
 
 <img src="./src/assets/images/landingpage.png" alt="search_page"/>
 
 
 ### Pantry Home Page
 * Note: Automate cabinet is still in development.
+
 <img src="./src/assets/images/homepage.png" alt="details_page"/>
 
 ### Pantry Search Recipe Page
