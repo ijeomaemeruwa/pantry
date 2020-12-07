@@ -39,7 +39,8 @@ const PantryList = () => {
   
     return (
     <>
-      <div className="card_container container">
+    <section className="container">
+      <div className="card_container mx-auto align-items-center">
       {
         recipeDocs.map(recipe => (
         <Card key={recipe.id} style={{ width: '16rem' }} className="card"> 
@@ -60,7 +61,8 @@ const PantryList = () => {
         </Card>
         ))
       }
-    </div>       
+    </div> 
+    </section>      
     </>
     );
     };

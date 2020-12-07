@@ -31,7 +31,6 @@ const RecipeList = ({ getRecipe }) => {
         <Card.Text>
         <small>{recipe.strCategory}</small>
         </Card.Text>
-
         <div className="fav_icon">
         <VscHeart/>
         </div>

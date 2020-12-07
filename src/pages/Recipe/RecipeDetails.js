@@ -19,6 +19,7 @@ class RecipeDetails extends Component {
     }
 
 
+
     render() {
      const { details } = this.state;
     const ingredients = [];
